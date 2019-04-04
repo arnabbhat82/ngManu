@@ -1,15 +1,28 @@
-<form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="item1">item1</label>
+<h2>Add Items</h2>
+<form class="mb" [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+  <div class="mb">
+    <label for="item1">Item 1</label>
     <input type="text" name="item1" formControlName="item1">
+    <span *ngIf="true"></span>
+    <span *ngIf="true"></span>
   </div>
-  <div>
-    <label for="item2">item2</label>
+  <div class="mb">
+    <label for="item2">Item 2</label>
     <input type="text" name="item2" formControlName="item2">
+    <span *ngIf="true"></span>
+    <span *ngIf="true"></span>
   </div>
-  <div>
-    <label for="item3">item3</label>
+  <div class="mb">
+    <label for="item3">Item 3</label>
     <input type="text" name="item3" formControlName="item3">
+    <span *ngIf="true"></span>
+    <span *ngIf="true"></span>
   </div>
   <button type="submit" [disabled]="itemForm.invalid">SUBMIT</button>
 </form>
+<div class="mb">
+  Form status: {{itemForm.status}}
+</div>
+<div class="mb">
+  Form value: {{itemForm.value | json}}
+</div>
