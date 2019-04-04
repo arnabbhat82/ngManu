@@ -12,11 +12,13 @@ export class ServersComponent implements OnInit {
   serverName = 'TestServer';
   serverCreated = false;
   newItemStatus = false;
-  newItemName = 'Inserted';
+  newItemName = '';
+  txtFruits = '';
+  fruits: string[];
   servers = ['Test Server', 'Test Server 2']
 
   constructor() {
-
+    this.fruits = ['oranges'];
     setTimeout(()=> {
       this.allowNewServer = true;
 
@@ -30,8 +32,11 @@ export class ServersComponent implements OnInit {
     this.servers.push(this.serverName);
     this.serverCreationStatus = 'Server was created! Name is' + this.serverName;
   }
-  getNewItem(){
+  getNewItem(event, txtFruits: HTMLInputElement){
     this.newItemStatus = true;
+    this.newItemName = 'Inserted';
+    this.fruits.push(txtFruits.value);
+    console.log(event);
   }
 
 
