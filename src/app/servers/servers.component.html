@@ -1,4 +1,4 @@
-{{ fruits | jason}}
+{{ fruits | json}}
 <label>Server name</label>
 <input type="text" [(ngModel)]="serverName" class="form-control">
 <button class="btn btn-primary"
@@ -19,6 +19,9 @@
   {{ txtFruits }}
 </p>
 <p>{{ txtFruits }}</p>
+<ng-template *ngFor="let item of fruits">
+  <p>{{ item }}</p>
+</ng-template>
 <ng-template #noItem><p>Nothing Found</p></ng-template>
 
 
