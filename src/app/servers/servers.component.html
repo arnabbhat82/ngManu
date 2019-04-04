@@ -1,4 +1,4 @@
-{{ fruits | json}}
+<!-- {{ fruits | json}}
 <label>Server name</label>
 <input type="text" [(ngModel)]="serverName" class="form-control">
 <button class="btn btn-primary"
@@ -13,16 +13,15 @@
 </ng-template>
 
 <div *ngFor="let server of servers"></div>
-<input type="text"  #txtFruits>
-<button (click)="getNewItem($event, txtFruits)">Get</button>
 <p *ngIf="newItemStatus; else noItem">
   {{ txtFruits }}
-</p>
-<p>{{ txtFruits }}</p>
-<ng-template *ngFor="let item of fruits">
-  <p>{{ item }}</p>
-</ng-template>
-<ng-template #noItem><p>Nothing Found</p></ng-template>
+</p> -->
+
+<input type="text" #txtFruits>
+<button (click)="getNewItem(txtFruits)">Add</button>
+<p class="new-item">{{ txtFruits.value ? ('Newly added item: ' + txtFruits.value) : 'Nothing Found'}}</p>
+
+<p *ngFor="let item of fruits">{{ item }}</p>
 
 
 
