@@ -12,6 +12,9 @@ export class ReactiveFormComponent implements OnInit {
     item2: ['', [Validators.required, Validators.minLength(3)]],
     item3: ['', [Validators.required, Validators.minLength(3)]],
   });
+  get item1() { return this.itemForm.get('item1'); }
+  get item2() { return this.itemForm.get('item2'); }
+  get item3() { return this.itemForm.get('item3'); }
 
   constructor(private fb: FormBuilder) { }
 

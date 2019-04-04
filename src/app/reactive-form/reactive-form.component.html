@@ -3,25 +3,44 @@
   <div class="mb">
     <label for="item1">Item 1</label>
     <input type="text" name="item1" formControlName="item1">
-    <span *ngIf="true"></span>
-    <span *ngIf="true"></span>
+    <div class="error small" *ngIf="item1.invalid && (item1.dirty || item1.touched)">
+      <span *ngIf="item1.errors.required">
+        Item name is required.
+      </span>
+      <span *ngIf="item1.errors.minlength">
+        Item name must be at least 2 characters long.
+      </span>
+    </div>
   </div>
   <div class="mb">
     <label for="item2">Item 2</label>
     <input type="text" name="item2" formControlName="item2">
-    <span *ngIf="true"></span>
-    <span *ngIf="true"></span>
+    <div class="error small" *ngIf="item2.invalid && (item2.dirty || item2.touched)">
+      <span *ngIf="item2.errors.required">
+        Item name is required.
+      </span>
+      <span *ngIf="item2.errors.minlength">
+        Item name must be at least 2 characters long.
+      </span>
+    </div>
   </div>
   <div class="mb">
     <label for="item3">Item 3</label>
     <input type="text" name="item3" formControlName="item3">
-    <span *ngIf="true"></span>
-    <span *ngIf="true"></span>
+    <div class="error small" *ngIf="item3.invalid && (item3.dirty || item3.touched)">
+      <span *ngIf="item3.errors.required">
+        Item name is required.
+      </span>
+      <span *ngIf="item3.errors.minlength">
+        Item name must be at least 2 characters long.
+      </span>
+    </div>
   </div>
   <button type="submit" [disabled]="itemForm.invalid">SUBMIT</button>
 </form>
 <div class="mb">
-  Form status: {{itemForm.status}}
+  Form status:
+  <span [ngClass]="{'error': itemForm.invalid, 'success': itemForm.valid}">{{itemForm.status}}</span>
 </div>
 <div class="mb">
   Form value: {{itemForm.value | json}}
